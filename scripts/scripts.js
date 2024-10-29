@@ -21,7 +21,7 @@ foodGroupButtons.forEach(button => {
 async function fetchRecipes(query) {
     const response = await fetch(`https://api.spoonacular.com/recipes/complexSearch?query=${query}&apiKey=${apiKey}`);
     if (!response.ok) {
-        throw new Error('Error en la solicitud: ' + response.statusText);
+        throw new Error('Error: ' + response.statusText);
     }
     const data = await response.json();
     return data.results;
@@ -30,7 +30,7 @@ async function fetchRecipes(query) {
 function displayRecipes(recipes) {
     recipesContainer.innerHTML = '';
     if (recipes.length === 0) {
-        recipesContainer.innerHTML = '<p>No se encontraron recetas.</p>';
+        recipesContainer.innerHTML = '<p>Recipes not found.</p>';
         return;
     }
     recipes.forEach(recipe => {
@@ -39,7 +39,7 @@ function displayRecipes(recipes) {
         recipeDiv.innerHTML = `
             <h2>${recipe.title}</h2>
             <img src="${recipe.image}" alt="${recipe.title}">
-            <a href="recipe.html?id=${recipe.id}">Ver receta</a>
+            <a href="recipe.html?id=${recipe.id}">See more</a>
 
         `;
         recipesContainer.appendChild(recipeDiv);

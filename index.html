@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recetas Deliciosas</title>
+    <title>Yummi Food Page</title>
     <link rel="stylesheet" href="styles/style.css">
 </head>
 
@@ -17,32 +17,41 @@
             <a href="JoinUs.html">Join Us</a>
         </div>
     </header>
-    <div>
-        <h1>Recetas Deliciosas</h1>
-        <p>Encuentra las mejores recetas por grupo alimentario.</p>
-    </div>
-    <div class="carousel">
-        <div class="carousel-inner" id="carousel-inner">
-            <!-- Images show dinamicly -->
+    <div class="container">
+        <div class="recipe-column">
+            <h1>Yummi Food: Your Go-To Recipe Haven</h1>
+            <p>Welcome to Yummi Food, your ultimate destination for delightful recipes! Whether you're looking for quick
+                weeknight meals, festive dishes for special occasions, or indulgent treats, we’ve got you covered. Our
+                easy-to-follow recipes are designed for cooks of all skill levels, ensuring that anyone can create
+                delicious
+                meals at home. Join our community of food lovers and discover the joy of cooking with fresh ingredients,
+                innovative flavors, and mouthwatering creations. Let’s get cooking and make every meal a yummi one!</p>
         </div>
-        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
-        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+        <div class="recipe-column">
+            <div class="carousel">
+                <div class="carousel-inner" id="carousel-inner">
+                    <!-- Images show dinamicly -->
+                </div>
+                <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+                <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+            </div>
+        </div>
     </div>
 
     <div class="container">
-        <input type="text" id="search-input" placeholder="Ingresa un ingrediente...">
+        <input type="text" id="search-input" placeholder="Search by ingredients...">
         <button id="search-button">Buscar</button>
     </div>
     <div class="button-container">
-        <button class="food-group" data-group="meat">Carnes</button>
-        <button class="food-group" data-group="vegetables">Verduras</button>
-        <button class="food-group" data-group="grains">Granos</button>
-        <button class="food-group" data-group="dairy">Lácteos</button>
+        <button class="food-group" data-group="meat">Meat</button>
+        <button class="food-group" data-group="vegetables">Vegetables</button>
+        <button class="food-group" data-group="grains">Grains</button>
+        <button class="food-group" data-group="dairy">Dairy</button>
     </div>
     <div id="recipes-container"></div>
 
     <footer>
-        <p>&copy; 2024 Recetas Deliciosas. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Ronal Orellana. All rights reserved.</p>
     </footer>
     <script src="scripts/scripts.js"></script>
     <script src="scripts/carrusel.js"></script>
