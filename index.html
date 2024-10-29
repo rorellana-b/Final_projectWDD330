@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Recetas Deliciosas</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header id="header">
+        <img id="logo" src="img/origin.png" alt="logo_img">
+        <div id="about-us">
+            <a href="index.html">Home</a>
+            <a href="aboutUs.html">About Us</a>
+            <a href="JoinUs.html">Join Us</a>
+        </div>
+    </header>
+    <div>
+        <h1>Recetas Deliciosas</h1>
+        <p>Encuentra las mejores recetas por grupo alimentario.</p>
+    </div>
+    <div class="carousel">
+        <div class="carousel-inner" id="carousel-inner">
+            <!-- Images show dinamicly -->
+        </div>
+        <button class="carousel-button prev" onclick="moveSlide(-1)">&#10094;</button>
+        <button class="carousel-button next" onclick="moveSlide(1)">&#10095;</button>
+    </div>
+
+    <div class="container">
+        <input type="text" id="search-input" placeholder="Ingresa un ingrediente...">
+        <button id="search-button">Buscar</button>
+    </div>
+    <div class="button-container">
+        <button class="food-group" data-group="meat">Carnes</button>
+        <button class="food-group" data-group="vegetables">Verduras</button>
+        <button class="food-group" data-group="grains">Granos</button>
+        <button class="food-group" data-group="dairy">Lácteos</button>
+    </div>
+    <div id="recipes-container"></div>
+
+    <footer>
+        <p>&copy; 2024 Recetas Deliciosas. Todos los derechos reservados.</p>
+    </footer>
+    <script src="scripts/scripts.js"></script>
+    <script src="scripts/carrusel.js"></script>
+</body>
+
+</html>
