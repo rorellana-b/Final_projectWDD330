@@ -10,33 +10,39 @@ async function fetchRecipe(id) {
     return await response.json(); // return the recipe data
 }
 
-function displayRecipe(recipe) {
-    document.getElementById('recipe-title').textContent = recipe.title;
+document.addEventListener('DOMContentLoaded', () => {
+    const recipeId = new URLSearchParams(window.location.search).get('id');
+    if (recipeId) {
+        displayRecipe(recipeId);
+    } else {
+        console.error('Recipe ID not found in URL.');
+    }
+});
 
-    // Show the picture of the recipe
-    const recipeImage = document.getElementById('recipe-image');
-    recipeImage.src = recipe.image;
+async function displayRecipe(id) {
+    try {
+        const recipe = await fetchRecipe(id);
 
-    const ingredientsList = document.getElementById('ingredients-list');
-    ingredientsList.innerHTML = '';
-    recipe.extendedIngredients.forEach(ingredient => {
-        const li = document.createElement('li');
-        li.textContent = `${ingredient.amount} ${ingredient.unit} ${ingredient.name}`;
-        ingredientsList.appendChild(li);
-    });
+        document.getElementById('recipe-image').src = recipe.image;
+        document.getElementById('recipe-image').alt = recipe.title;
 
-    const instructionsList = document.getElementById('instructions-list');
-    instructionsList.innerHTML = '';
-    recipe.analyzedInstructions[0].steps.forEach(step => {
-        const li = document.createElement('li');
-        li.textContent = step.step;
-        instructionsList.appendChild(li);
-    });
+        const ingredientsList = document.getElementById('ingredients-list');
+        recipe.extendedIngredients.forEach(ingredient => {
+            const li = document.createElement('li');
+            li.textContent = ingredient.original;
+            ingredientsList.appendChild(li);
+        });
 
-    document.getElementById('prep-time').textContent = `Preparation Time: ${recipe.readyInMinutes} minutes`;
-    document.getElementById('servings').textContent = `Servings: ${recipe.servings}`;
+        const instructionsList = document.getElementById('instructions-list');
+        recipe.analyzedInstructions[0].steps.forEach(step => {
+            const li = document.createElement('li');
+            li.textContent = step.step;
+            instructionsList.appendChild(li);
+        });
+
+        document.getElementById('prep-time').textContent = `Prep Time: ${recipe.readyInMinutes} minutes`;
+        document.getElementById('servings').textContent = `Servings: ${recipe.servings}`;
+    } catch (error) {
+        console.error('Error fetching recipe:', error);
+    }
 }
-
-fetchRecipe(recipeId)
-    .then(displayRecipe)
-    .catch(error => console.error('Error:', error));

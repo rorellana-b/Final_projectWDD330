@@ -64,17 +64,19 @@ h1 {
 }
 
 #search-button {
-    padding: 10px 20px;
+    padding: 5px 10px;
+    width: 200px;
+    height: 35px;
     border: none;
     border-radius: 5px;
-    background-color: #ff4d00;
+    background-color: rgba(255, 102, 0, 0.9);
     color: white;
     cursor: pointer;
     margin-left: 10px;
 }
 
 #search-button:hover {
-    background-color: #0c56de;
+    background-color: #5a54d1;
 }
 
 p {
@@ -83,6 +85,7 @@ p {
     line-height: 1.6;
     margin: 15px 0;
     font-size: 1.1em;
+    text-align: center;
 }
 
 #recipes-container {
@@ -91,6 +94,31 @@ p {
     flex-wrap: wrap;
     justify-content: center;
 }
+
+/* Recibe description style */
+#recipe {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+#recipe-image {
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+
+ul,
+ol {
+    list-style-position: inside;
+    padding: 0;
+    margin: 10px 0;
+}
+
 
 .recipe {
     background: white;
@@ -120,11 +148,13 @@ footer {
 }
 
 .food-group {
+    width: 25rem;
+    height: 5rem;
     margin: 0 10px;
     padding: 10px 20px;
     border: none;
     border-radius: 5px;
-    background-color: #ff6600;
+    background-color: rgba(255, 102, 0, 0.9);
     color: white;
     cursor: pointer;
     transition: background-color 0.3s;
@@ -135,6 +165,7 @@ footer {
 }
 
 a {
+    font-size: x-large;
     text-decoration: none;
     color: #000;
     font-weight: bold;
@@ -151,6 +182,45 @@ a {
 }
 
 /* Form style */
+
+#register {
+    background-color: #ffcc80;
+    padding: 20px;
+    border-radius: 8px;
+    max-width: 400px;
+    margin: auto;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    text-align: center;
+    color: #e65100;
+}
+
+label {
+    display: block;
+    margin: 10px 0 5px;
+}
+
+input {
+    width: 95%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+#btForm {
+    width: 100%;
+    padding: 10px;
+    background-color: #e65100;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+
 form a {
     display: inline-block;
     margin-top: 10px;
@@ -201,12 +271,34 @@ form a {
 
 
 @media (max-width: 768px) {
-    body {
-        background-color: lightcoral;
-    }
 
     #header {
         flex-direction: column;
         align-items: flex-start;
     }
+
+    .container {
+        display: block;
+    }
+
+    .recipe-column {
+        width: 90%;
+    }
+
+    #search-input {
+        width: 90%;
+    }
+
+    #search-button {
+        padding: 5px 10px;
+        width: 90%;
+        height: 35px;
+        border: none;
+        border-radius: 5px;
+        background-color: rgba(255, 102, 0, 0.9);
+        color: white;
+        cursor: pointer;
+        margin-left: 10px;
+    }
+
 }

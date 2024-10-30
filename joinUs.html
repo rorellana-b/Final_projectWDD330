@@ -14,7 +14,7 @@
         <div id="about-us">
             <a href="index.html">Home</a>
             <a href="aboutUs.html">About Us</a>
-            <a href="JoinUs.html">Join Us</a>
+            <a href="joinUs.html">Join Us</a>
         </div>
     </header>
 
@@ -27,7 +27,7 @@
             <input type="email" id="email" name="email" required>
             <label for="password">Password:</label>
             <input type="password" id="password" name="password" required>
-            <button type="submit">Join us</button>
+            <button type="submit" id="btForm">Join us</button>
         </form>
     </section>
 
@@ -47,6 +47,7 @@
 
             console.log(`User added: ${username}, Email: ${email}`);
             alert('Done!');
+            registrationForm.reset();
         });
     </script>
 </body>
