@@ -157,6 +157,7 @@ footer {
     background-color: rgba(255, 102, 0, 0.9);
     color: white;
     cursor: pointer;
+    font-size: 18px;
     transition: background-color 0.3s;
 }
 
@@ -226,6 +227,47 @@ form a {
     margin-top: 10px;
 }
 
+#modal {
+    display: none;
+    /* Oculto por defecto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0, 0, 0);
+    background-color: rgba(0, 0, 0, 0.4);
+    /* Fondo semi-transparente */
+    padding-top: 100px;
+}
+
+#modal-content {
+    background-color: #fefefe;
+    margin: 5% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+#close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+}
+
+#close-modal:hover,
+#close-modal:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
 /* Carrusel styles  */
 .carousel {
     position: relative;
@@ -266,6 +308,24 @@ form a {
 
 .carousel-button.next {
     right: 10px;
+}
+
+#about {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.grid-item {
+    background: #f0f0f0;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 

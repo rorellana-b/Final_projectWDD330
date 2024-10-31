@@ -17,7 +17,12 @@
             <a href="joinUs.html">Join Us</a>
         </div>
     </header>
-
+    <div id="modal">
+        <div id="modal-content">
+            <span id="close-modal">&times;</span>
+            <p id="welcome-message"></p>
+        </div>
+    </div>
     <section id="register">
         <h2>Join Us</h2>
         <form id="registration-form">
@@ -29,27 +34,12 @@
             <input type="password" id="password" name="password" required>
             <button type="submit" id="btForm">Join us</button>
         </form>
+        <div id="modal">
     </section>
-
+    <script src="scripts/form.js"></script>
     <footer>
-        <p>&copy; 2024 Recetas Deliciosas. Todos los derechos reservados.</p>
+        <p>&copy; 2024 Ronal Orellana. All rights reserved.</p>
     </footer>
-
-    <script>
-        const registrationForm = document.getElementById('registration-form');
-
-        registrationForm.addEventListener('submit', (event) => {
-            event.preventDefault();
-
-            const username = event.target.username.value;
-            const email = event.target.email.value;
-            const password = event.target.password.value;
-
-            console.log(`User added: ${username}, Email: ${email}`);
-            alert('Done!');
-            registrationForm.reset();
-        });
-    </script>
 </body>
 
 </html>
