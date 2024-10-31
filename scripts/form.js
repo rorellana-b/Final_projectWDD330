@@ -19,7 +19,7 @@ registrationForm.addEventListener('submit', (event) => {
 
     localStorage.setItem('user', JSON.stringify(userData));
 
-    welcomeMessage.innerText = `¡Listo! Bienvenido a nuestra comunidad, ${username}`;
+    welcomeMessage.innerText = `Done! Thanks for join to our community, ${username}`;
     modal.style.display = 'block';
     registrationForm.reset();
 });
